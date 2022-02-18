@@ -59,7 +59,36 @@ void Multiple2d(int *arr, int *arr2, int row, int column)
         }
         printf("\n");
     }
-    
+}
+
+void lowerBound(int *arr, int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            if (i >= j)
+                printf("%d\t", *(arr + i * 3 + j));
+            else
+                printf("%d\t", 0);
+        }
+        printf("\n");
+    }
+}
+
+void upperBound(int *arr, int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            if (i <= j)
+                printf("%d\t", *(arr + i * 3 + j));
+            else
+                printf("%d\t", 0);
+        }
+        printf("\n");
+    }
 }
 
 void main()
@@ -111,5 +140,10 @@ void main()
     sub2d(arr, arr2, 3, 3);
     Multiple2d(arr, arr2, 3, 3);
 
-    printf("\nsize : %d", sizeof(*arr2));
+    printf("\nsize : %d\n", sizeof(*arr2));
+
+    printf("Lower triangular matrix\n");
+    lowerBound(arr, 3);
+    printf("\nUpper triangular matrix\n");
+    upperBound(arr, 3);
 }
